@@ -32,7 +32,6 @@ interface ICards {
   allCards: ICard[];
   searchQuery: string | string[];
   onSearch?: (value: string) => void;
-  onChangeBrand?: (value: BrandCode) => void;
 }
 
 const getBgColor = (lvl: number, original?: string, card?: string) => {

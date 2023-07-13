@@ -314,5 +314,3 @@ export const simplySynth = {
   tags: ["apps", "simply"],
   bgColor: COLOR,
 };
-
-// got-timer
