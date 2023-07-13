@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { BrandCode } from "../../pages/StartPage";
 import { copyToClipboard } from "../../utils";
 import TreeView, { ITreeView } from "../tree-view/TreeView";
 
@@ -54,11 +53,9 @@ export interface ICard {
   color?: string;
   bgColor?: string;
   isOpen?: boolean;
-  brandsUsing?: BrandCode[];
   treeView?: ITreeView;
   searchQuery?: string;
   onSearch?: (value: string) => void;
-  onChangeBrand?: (value: BrandCode) => void;
 }
 
 const Card = ({
@@ -71,11 +68,9 @@ const Card = ({
   color,
   bgColor,
   isOpen,
-  brandsUsing,
   treeView,
   searchQuery,
   onSearch,
-  onChangeBrand,
 }: ICard) => {
   const [expand, setExpand] = useState(false);
   const cardTitle = getSearchView(title, searchQuery);
@@ -120,26 +115,7 @@ const Card = ({
               ))}
             </Tags>
           )}
-          <Description>
-            {getSearchView(description, searchQuery)}
-            {brandsUsing && brandsUsing.length > 0 && (
-              <>
-                <hr />
-                <strong>Brands implemented:</strong>
-                <br />
-                {brandsUsing.map((b, i) => (
-                  <React.Fragment key={b}>
-                    <BrandButton
-                      onClick={() => onChangeBrand && onChangeBrand(b)}
-                    >
-                      {b}
-                    </BrandButton>
-                    {i < brandsUsing.length - 1 ? ", " : ""}
-                  </React.Fragment>
-                ))}
-              </>
-            )}
-          </Description>
+          <Description>{getSearchView(description, searchQuery)}</Description>
           {links && links.length > 0 && (
             <>
               <Strong>Links</Strong>

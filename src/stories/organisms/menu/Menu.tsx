@@ -1,9 +1,7 @@
 import styled from "styled-components";
 import { useEffect, useRef, useState } from "react";
 import nobiaDxArchitecture from "../../assets/nobia-dx-architecture.png";
-import NobiaIcon from "../../atoms/nobia-icon/NobiaIcon";
 import SecondaryButton from "../../atoms/button/SecondaryButton";
-import { Brand, BrandCode, Environment } from "../../pages/StartPage";
 
 const SLICE = window.innerWidth < 600 ? 3 : 12;
 type DebouncedFunction<T extends (...args: any[]) => any> = (
@@ -27,14 +25,8 @@ const debounce = <T extends (...args: any[]) => any>(
 interface IMenu {
   searchQuery: string;
   latestSearchQueries: string[];
-  brand: Brand;
-  environment: Environment | string;
-  brands: Brand[];
-  environments: Environment[];
   splitSearch: boolean;
   currentSearchIndex: number;
-  onChangeBrand: (brandcode: BrandCode) => void;
-  onChangeEnvironment: (env: Environment) => void;
   onChangeFreeTextSearchQuery: (query: string) => void;
   onChangeSearchQuery: (query: string, index?: number) => void;
   onChangeSplitSearch: (value: boolean) => void;
@@ -43,14 +35,8 @@ interface IMenu {
 const Menu = ({
   searchQuery,
   latestSearchQueries,
-  brand,
-  environment,
-  brands,
-  environments,
   splitSearch,
   currentSearchIndex,
-  onChangeBrand,
-  onChangeEnvironment,
   onChangeFreeTextSearchQuery,
   onChangeSearchQuery,
   onChangeSplitSearch,
@@ -72,20 +58,6 @@ const Menu = ({
     debouncedOnChangeSearchQuery(e.target.value);
     setVisibleValue(e.target.value);
   };
-
-  useEffect(() => {
-    setUpdateBrand(true);
-    setTimeout(() => {
-      setUpdateBrand(false);
-    }, 300);
-  }, [brand]);
-
-  useEffect(() => {
-    setUpdateEnvironment(true);
-    setTimeout(() => {
-      setUpdateEnvironment(false);
-    }, 300);
-  }, [environment]);
 
   useEffect(() => {
     if (firstLoad.current < 3) {
@@ -121,28 +93,6 @@ const Menu = ({
             {splitSearch ? "Word search" : "Sentence search"}
           </MiniButton>
         </SearchContainer>
-        <BrandSelect
-          updateBrand={updateBrand}
-          onChange={(e: any) => onChangeBrand(e.target.value)}
-          value={brand.code}
-        >
-          {brands.map((b) => (
-            <option key={b.code} value={b.code}>
-              {b.code}
-            </option>
-          ))}
-        </BrandSelect>
-        <EnvironmentSelect
-          updateEnvironment={updateEnvironment}
-          onChange={(e: any) => onChangeEnvironment(e.target.value)}
-          value={environment}
-        >
-          {environments.map((b) => (
-            <option key={b} value={b}>
-              {b}
-            </option>
-          ))}
-        </EnvironmentSelect>
         {latestSearchQueries && latestSearchQueries.length > 1 && (
           <Tags>
             <InnerTags>
@@ -237,17 +187,18 @@ const Wrapper = styled.div`
     "search search search search"
     "tags tags tags tags";
   padding: 12px;
-  @media (min-width: 700px) {
+  @media (min-width: 600px) {
     padding: 20px 20px 5px;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
     grid-template-areas:
-      "title . brandselect environmentselect"
-      "search search search search"
+      "title search search search"
       "tags tags tags tags";
   }
   @media (min-width: 1000px) {
-    grid-template-columns: 2fr 5fr 1fr 1fr;
+    padding: 20px 20px 5px;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
     grid-template-areas:
-      "title search brandselect environmentselect"
+      "title search search ."
       "tags tags tags tags";
   }
 `;
@@ -306,29 +257,6 @@ const Select = styled.select`
     font-size: 18px;
     padding: 15px;
   }
-`;
-const BrandSelect = styled(Select)<{ updateBrand: boolean }>`
-  background-color: ${(p) => p.theme.colors.positiveGreen};
-  grid-area: brandselect;
-  transition: background-color 300ms ease;
-  border: 1px solid ${(p) => p.theme.colors.positiveGreen};
-  ${(p) =>
-    p.updateBrand &&
-    `
-      background-color: ${p.theme.colors.neutralYellow};
-      border: 1px solid ${p.theme.colors.neutralYellow};
-    `};
-`;
-const EnvironmentSelect = styled(Select)<{ updateEnvironment: boolean }>`
-  background-color: #777;
-  border: 1px solid #777;
-  grid-area: environmentselect;
-  ${(p) =>
-    p.updateEnvironment &&
-    `
-      background-color: ${p.theme.colors.neutralYellow};
-      border: 1px solid ${p.theme.colors.neutralYellow};
-    `};
 `;
 const SearchContainer = styled.div`
   grid-area: search;

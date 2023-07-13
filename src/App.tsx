@@ -31,7 +31,8 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 const App = () => {
-  const [seeStart, setSeeStart] = useState(localStorage.getItem("you-are"));
+  // const [seeStart, setSeeStart] = useState(localStorage.getItem("you-are"));
+  const [seeStart, setSeeStart] = useState("seb");
   return (
     <div className="App">
       <ThemeProvider theme={theme}>

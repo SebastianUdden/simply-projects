@@ -1,21 +1,34 @@
 import {
+  b1tf0undry,
+  bossWintergames,
+  claraBacklund,
+  galacticClock,
   hairdo,
+  learnWebDevelopment,
+  namnsdag,
   pillowWiki,
   pwaContext,
   pwaTemplate,
   sebastianudden,
   simplyBaby,
   simplyChatroom,
+  simplyHarmonics,
   simplySynth,
-} from "./apps";
+} from "./webApps";
 
-export const APPS_LIST = {
-  title: "Apps",
+export const WEB_APPS_LIST = {
+  title: "Web apps",
   subtitle: "Web applications",
   list: [
+    { ...b1tf0undry },
+    { ...bossWintergames },
+    { ...claraBacklund },
+    { ...galacticClock },
     {
       ...hairdo,
     },
+    { ...learnWebDevelopment },
+    { ...namnsdag },
     {
       ...pillowWiki,
     },
@@ -33,6 +46,9 @@ export const APPS_LIST = {
     },
     {
       ...simplyChatroom,
+    },
+    {
+      ...simplyHarmonics,
     },
     {
       ...simplySynth,

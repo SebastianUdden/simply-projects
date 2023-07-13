@@ -20,84 +20,11 @@ const searchTips = [
   "documentation",
 ];
 
-export type BrandCode =
-  | "ewe"
-  | "hthbe"
-  | "hthde"
-  | "hthdk"
-  | "hthno"
-  | "hthse"
-  | "intuo"
-  | "invita"
-  | "keittiomaailma"
-  | "magnet"
-  | "magnettrade"
-  | "marbodal"
-  | "norema"
-  | "novart"
-  | "onehth"
-  | "sentens"
-  | "sigdal"
-  | "unoformcom"
-  | "unoform"
-  | "unoformno"
-  | "unoformse";
-
-export type Brand = {
-  code: BrandCode;
-  epiUrl: string;
-  ecomUrl: string;
-  url: string;
-};
-
-const brands: Brand[] = [
-  { code: "ewe", epiUrl: "ewe", ecomUrl: "", url: "" },
-  { code: "hthbe", epiUrl: "hth-web", ecomUrl: "", url: "www.hth.be" },
-  { code: "hthde", epiUrl: "hth-web", ecomUrl: "", url: "www.hth.de" },
-  { code: "hthdk", epiUrl: "hth-web", ecomUrl: "e-shop", url: "www.hth.dk" },
-  {
-    code: "hthno",
-    epiUrl: "hth-web-no",
-    ecomUrl: "nettbutikk",
-    url: "www.hth.no",
-  },
-  { code: "hthse", epiUrl: "hth-web-se", ecomUrl: "e-shop", url: "www.hth.se" },
-  { code: "intuo", epiUrl: "intuo", ecomUrl: "", url: "" },
-  { code: "invita", epiUrl: "invita", ecomUrl: "", url: "" },
-  { code: "keittiomaailma", epiUrl: "keittiomaailma", ecomUrl: "", url: "" },
-  { code: "magnet", epiUrl: "magnet", ecomUrl: "", url: "" },
-  { code: "magnettrade", epiUrl: "magnettrade", ecomUrl: "", url: "" },
-  { code: "marbodal", epiUrl: "marbodal", ecomUrl: "", url: "" },
-  { code: "norema", epiUrl: "norema", ecomUrl: "", url: "" },
-  { code: "novart", epiUrl: "novart", ecomUrl: "", url: "" },
-  { code: "onehth", epiUrl: "onehth", ecomUrl: "", url: "" },
-  { code: "sentens", epiUrl: "sentens", ecomUrl: "", url: "" },
-  { code: "sigdal", epiUrl: "sigdal", ecomUrl: "", url: "" },
-  { code: "unoformcom", epiUrl: "unoformcom", ecomUrl: "", url: "unoform.com" },
-  { code: "unoform", epiUrl: "unoform", ecomUrl: "", url: "unoform.dk" },
-  { code: "unoformno", epiUrl: "unoformno", ecomUrl: "", url: "unoform.no" },
-  { code: "unoformse", epiUrl: "unoformse", ecomUrl: "", url: "unoform.se" },
-];
-
 interface IStartPage {
   lists: IList[];
-  // apis: ICard[];
-  // serviceBus: ICard[];
-  // thirdParty: ICard[];
-  // sap: ICard[];
-  // mainSites: ICard[];
-  // infra: ICard[];
 }
 
-const StartPage = ({
-  lists,
-}: // apis: apisIn,
-// serviceBus: serviceBusIn,
-// thirdParty: thirdPartyIn,
-// sap: sapIn,
-// mainSites: mainSitesIn,
-// infra: infraIn,
-IStartPage) => {
+const StartPage = ({ lists }: IStartPage) => {
   const [showLoader, setShowLoader] = useState(true);
   const [showAllTags, setShowAllTags] = useState(false);
   const [splitSearch, setSplitSearch] = useState(true);
@@ -105,39 +32,7 @@ IStartPage) => {
   const [latestSearchQueries, setLatestSearchQueries] = useState<string[]>([]);
   const [lastWasFreeText, setLastWasFreeText] = useState(true);
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const [brand, setBrand] = useState<Brand>(
-    brands.find((b) => b.code === localStorage.getItem("brandcode")) ||
-      brands[0]
-  );
-  const [environment, setEnvironment] = useState<Environment | string>(
-    localStorage.getItem("env") || environments[0]
-  );
-  // const [apps, setApps] = useState<ICard[]>([]);
-  // const [apis, setApis] = useState<ICard[]>([]);
-  // const [serviceBus, setServiceBus] = useState<ICard[]>([]);
-  // const [thirdParty, setThirdParty] = useState<ICard[]>([]);
-  // const [sap, setSap] = useState<ICard[]>([]);
-  // const [mainSites, setMainSites] = useState<ICard[]>([]);
-  // const [infra, setInfra] = useState<ICard[]>([]);
 
-  const handleBrandUpdate = (brandCode: BrandCode) => {
-    setSplitSearch(true);
-    localStorage.setItem("brandcode", brandCode);
-    setBrand(brands.find((b) => b.code === brandCode) || brands[0]);
-    if (searchQuery.includes(brandCode)) return;
-    brands.forEach((b) => {
-      if (searchQuery.includes(b.code)) {
-        setSearchQuery(searchQuery.replace(b.code, brandCode));
-      }
-    });
-    if (!brands.some((b) => searchQuery.includes(b.code))) {
-      setSearchQuery(`${searchQuery ? `${searchQuery} ` : ""}${brandCode}`);
-    }
-  };
-  const handleEnvironmentUpdate = (env: Environment) => {
-    localStorage.setItem("env", env);
-    setEnvironment(env);
-  };
   const handleFreeTextSearch = (value: string) => {
     setSplitSearch(true);
     if (lastWasFreeText) {
@@ -204,38 +99,8 @@ IStartPage) => {
     }
   }, []);
 
-  // useEffect(() => {
-  //   // ts-ignore reason: formatLinks filters on boolean, links will never contain them
-  //   // @ts-ignore
-  //   setApps(formatLinks(appsIn, brand, environment));
-  //   // @ts-ignore
-  //   setApis(formatLinks(apisIn, brand, environment));
-  //   // @ts-ignore
-  //   setServiceBus(formatLinks(serviceBusIn, brand, environment));
-  //   // @ts-ignore
-  //   setThirdParty(formatLinks(thirdPartyIn, brand, environment));
-  //   // @ts-ignore
-  //   setSap(formatLinks(sapIn, brand, environment));
-  //   // @ts-ignore
-  //   setMainSites(formatLinks(mainSitesIn, brand, environment));
-  //   // @ts-ignore
-  //   setInfra(formatLinks(infraIn, brand, environment));
-  // }, [brand, environment]);
-  // apis.length +
-  // thirdParty.length +
-  // sap.length +
-  // mainSites.length +
-  // infra.length
-
   const query = splitSearch ? searchQuery.split(" ") : searchQuery;
-  const allCards = [
-    ...lists.map((l: any) => l.list).flat(),
-    // ...apis,
-    // ...thirdParty,
-    // ...sap,
-    // ...mainSites,
-    // ...infra,
-  ];
+  const allCards = [...lists.map((l: any) => l.list).flat()];
   const allTags = [...new Set(allCards.map((c) => c.tags).flat())].sort();
   return (
     <>
@@ -243,13 +108,7 @@ IStartPage) => {
         searchQuery={searchQuery}
         latestSearchQueries={latestSearchQueries}
         currentSearchIndex={currentSearchIndex}
-        brand={brand}
-        environment={environment}
-        brands={brands}
-        environments={environments}
         splitSearch={splitSearch}
-        onChangeBrand={handleBrandUpdate}
-        onChangeEnvironment={handleEnvironmentUpdate}
         onChangeFreeTextSearchQuery={handleFreeTextSearch}
         onChangeSearchQuery={handleSearch}
         onChangeSplitSearch={(x) => setSplitSearch(x)}
@@ -276,15 +135,16 @@ IStartPage) => {
           <P>
             Below is an{" "}
             <strong>
-              overview of all {lists.reduce((a, b) => a + b.list.length, 0)}{" "}
-              'cards' that are connected to projects I've worked on. These
-              include applications, application programming interfaces, gists,
-              platforms etc.
+              overview of all {lists.reduce((a, b) => a + b.list.length, 0)}
+              'cards'
             </strong>{" "}
-            that exists within and surrounding my workflow. The content is{" "}
-            <strong>searchable by the top bar</strong>, you can also{" "}
-            <strong>change brand and environment</strong> to update the dynamic
-            links for each card.
+            that are connected to <strong>projects I've worked on</strong>.
+            These include{" "}
+            <strong>
+              applications, application programming interfaces, gists, platforms
+              etc.
+            </strong>{" "}
+            that exists within and surrounding my workflow.
           </P>
         )}
 
@@ -296,7 +156,6 @@ IStartPage) => {
               cards={l.list}
               searchQuery={query}
               onSearch={handleSearch}
-              onChangeBrand={handleBrandUpdate}
               allCards={allCards}
             />
           ))}

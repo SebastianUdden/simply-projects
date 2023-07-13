@@ -2,6 +2,42 @@ import { uuidv4 } from "../../../utils";
 
 export const COLOR = "#26D7D5";
 
+export const gotTimer = {
+  id: uuidv4(),
+  title: "GOT timer",
+  description:
+    "got-timer is a timer created for the Game of Thrones board game.",
+  links: [
+    {
+      url: "https://github.com/SebastianUdden/got-timer",
+      label: "Github",
+    },
+    {
+      url: "https://app.netlify.com/sites/got-timer/overview",
+      label: "Netlify",
+    },
+    {
+      url: "https://got-timer.netlify.app/",
+      label: "Website",
+    },
+  ],
+  tags: ["apps", "games"],
+  bgColor: COLOR,
+};
+export const itimApi = {
+  id: uuidv4(),
+  title: "iTim API",
+  description:
+    "An API for a gimmick game platform created for a friends bachelor party.",
+  links: [
+    {
+      url: "https://github.com/SebastianUdden/itim-api",
+      label: "Github",
+    },
+  ],
+  tags: ["apis", "games"],
+  bgColor: COLOR,
+};
 export const simplyChess = {
   id: uuidv4(),
   title: "Simply chess",
@@ -20,7 +56,7 @@ export const simplyChess = {
       label: "Website",
     },
   ],
-  tags: ["apps", "simply"],
+  tags: ["apps", "simply", "games"],
   bgColor: COLOR,
 };
 export const simplyOthello = {
@@ -41,7 +77,7 @@ export const simplyOthello = {
       label: "Website",
     },
   ],
-  tags: ["apps", "simply"],
+  tags: ["apps", "simply", "games"],
   bgColor: COLOR,
 };
 export const simplyPacman = {
@@ -62,7 +98,7 @@ export const simplyPacman = {
       label: "Website",
     },
   ],
-  tags: ["apps", "simply"],
+  tags: ["apps", "simply", "games"],
   bgColor: COLOR,
 };
 export const simplyTetris = {
@@ -83,7 +119,7 @@ export const simplyTetris = {
       label: "Website",
     },
   ],
-  tags: ["apps", "simply"],
+  tags: ["apps", "simply", "games"],
   bgColor: COLOR,
 };
 export const simplyTextAdventure = {
@@ -104,7 +140,7 @@ export const simplyTextAdventure = {
       label: "Website",
     },
   ],
-  tags: ["apps", "simply"],
+  tags: ["apps", "simply", "games"],
   bgColor: COLOR,
 };
 export const theClicker = {
@@ -125,6 +161,20 @@ export const theClicker = {
       label: "Website",
     },
   ],
-  tags: ["apps", "clicker", "unpolished"],
+  tags: ["apps", "clicker", "games", "unpolished"],
+  bgColor: COLOR,
+};
+export const timtendo = {
+  id: uuidv4(),
+  title: "Timtendo",
+  description:
+    "A gimmick game platform created for a friends bachelor party. TODO: commit changes so page loads.",
+  links: [
+    {
+      url: "https://github.com/SebastianUdden/timtendo",
+      label: "Github",
+    },
+  ],
+  tags: ["apps", "games"],
   bgColor: COLOR,
 };

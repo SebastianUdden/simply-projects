@@ -2,6 +2,19 @@ import { uuidv4 } from "../../../utils";
 
 export const COLOR = "#B6C7A5";
 
+export const myWebToolsApi = {
+  id: uuidv4(),
+  title: "My web tools API",
+  description: "my-web-tools-api",
+  links: [
+    {
+      url: "https://github.com/SebastianUdden/my-web-tools-api",
+      label: "Github",
+    },
+  ],
+  tags: ["apis", "brain tools", "unpolished"],
+  bgColor: COLOR,
+};
 export const simplyFlashCards = {
   id: uuidv4(),
   title: "Simply flash cards",
@@ -22,7 +35,7 @@ export const simplyFlashCards = {
       label: "Website",
     },
   ],
-  tags: ["apps", "simply"],
+  tags: ["apps", "brain tools", "simply"],
   bgColor: COLOR,
 };
 export const simplyHabits = {
@@ -43,7 +56,30 @@ export const simplyHabits = {
       label: "Website",
     },
   ],
-  tags: ["apps", "simply"],
+  tags: ["apps", "brain tools", "simply"],
+  bgColor: COLOR,
+};
+export const simplyProjects = {
+  id: uuidv4(),
+  title: "Simply projets",
+  description:
+    "The app you are currently using, it serves as a hub for all projects I've worked on and related content. These are displayed as cards with a title, description, links and relations to other cards displayed. It's searchable from the top bar with free text or you can use the tags.",
+  brandsUsing: [],
+  links: [
+    {
+      url: "https://github.com/SebastianUdden/simply-projects",
+      label: "Github",
+    },
+    {
+      url: "https://app.netlify.com/sites/simply-projects/overview",
+      label: "Netlify",
+    },
+    {
+      url: "https://simply-projects.netlify.app/",
+      label: "Website",
+    },
+  ],
+  tags: ["apps", "brain tools", "simply"],
   bgColor: COLOR,
 };
 export const simplyQuotes = {
@@ -64,7 +100,7 @@ export const simplyQuotes = {
       label: "Website",
     },
   ],
-  tags: ["apps", "simply"],
+  tags: ["apps", "brain tools", "simply"],
   bgColor: COLOR,
 };
 export const simplyRememory = {
@@ -85,7 +121,7 @@ export const simplyRememory = {
       label: "Website",
     },
   ],
-  tags: ["apps", "simply"],
+  tags: ["apps", "brain tools", "simply"],
   bgColor: COLOR,
 };
 export const simplySteps = {
@@ -106,6 +142,27 @@ export const simplySteps = {
       label: "Website",
     },
   ],
-  tags: ["apps", "simply"],
+  tags: ["apps", "brain tools", "simply"],
+  bgColor: COLOR,
+};
+export const socialGraph = {
+  id: uuidv4(),
+  title: "Social graph",
+  description: "social-graph",
+  links: [
+    {
+      url: "https://github.com/SebastianUdden/social-graph",
+      label: "Github",
+    },
+    {
+      url: "https://app.netlify.com/sites/social-graph/overview",
+      label: "Netlify",
+    },
+    {
+      url: "https://social-graph.netlify.app/",
+      label: "Website",
+    },
+  ],
+  tags: ["apps", ""],
   bgColor: COLOR,
 };

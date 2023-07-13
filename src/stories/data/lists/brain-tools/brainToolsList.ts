@@ -1,15 +1,21 @@
 import {
+  myWebToolsApi,
   simplyFlashCards,
   simplyHabits,
+  simplyProjects,
   simplyQuotes,
   simplyRememory,
   simplySteps,
+  socialGraph,
 } from "./brainTools";
 
 export const BRAIN_TOOLS_LIST = {
   title: "Brain tools",
   subtitle: "Web applications tools for cognition/memory.",
   list: [
+    {
+      ...myWebToolsApi,
+    },
     {
       ...simplyFlashCards,
       connectionsUp: [],
@@ -18,6 +24,7 @@ export const BRAIN_TOOLS_LIST = {
     {
       ...simplyHabits,
     },
+    { ...simplyProjects },
     {
       ...simplyQuotes,
     },
@@ -26,6 +33,9 @@ export const BRAIN_TOOLS_LIST = {
     },
     {
       ...simplySteps,
+    },
+    {
+      ...socialGraph,
     },
   ],
 };

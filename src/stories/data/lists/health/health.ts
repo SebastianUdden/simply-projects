@@ -26,7 +26,8 @@ export const boss100mileChallenge = {
 export const compoundPushups = {
   id: uuidv4(),
   title: "Compound pushups",
-  description: "compound-pushups",
+  description:
+    "This app called compound-pushups is a simple application for challenging yourself every day. It compounds each day with +1 if reps are a success -1 if reps failed. TODO: implement this change, make it possible to set current through localstorage.",
   links: [
     {
       url: "https://github.com/SebastianUdden/compound-pushups",

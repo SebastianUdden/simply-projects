@@ -82,3 +82,17 @@ export const pillowComponents = {
   tags: ["design system"],
   bgColor: COLOR,
 };
+export const zoomPanBox = {
+  id: uuidv4(),
+  title: "Zoom/Pan box",
+  description:
+    "This is a reusable component called zoom-pan-box, us ctrl to zoom and shift to pan. TODO: add to netlify with website or integrate in one of design systems",
+  links: [
+    {
+      url: "https://github.com/SebastianUdden/zoom-pan-box",
+      label: "Github",
+    },
+  ],
+  tags: ["design system", "reusable component"],
+  bgColor: COLOR,
+};

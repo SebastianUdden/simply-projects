@@ -4,7 +4,6 @@ import PrimaryButton from "../../atoms/button/PrimaryButton";
 import SecondaryButton from "../../atoms/button/SecondaryButton";
 import TertiaryButton from "../../atoms/button/TertiaryButton";
 import Card, { Connection, ICard } from "../../molecules/card/Card";
-import { BrandCode } from "../../pages/StartPage";
 
 const sort: any = {
   ascending: (a: ICard, b: ICard) => {
@@ -102,7 +101,6 @@ const Cards = ({
   allCards,
   searchQuery,
   onSearch,
-  onChangeBrand,
 }: ICards) => {
   const [selectedSorting, setSelectedSorting] = useState("descending");
   const [openAll, setOpenAll] = useState(false);
@@ -151,7 +149,6 @@ const Cards = ({
               Array.isArray(searchQuery) ? searchQuery.join(" ") : searchQuery
             }
             onSearch={onSearch}
-            onChangeBrand={onChangeBrand}
             isOpen={true}
             treeView={getTreeView(
               1,
@@ -197,7 +194,6 @@ const Cards = ({
                       : searchQuery
                   }
                   onSearch={onSearch}
-                  onChangeBrand={onChangeBrand}
                   isOpen={openAll}
                 />
               </React.Fragment>

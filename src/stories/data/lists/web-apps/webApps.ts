@@ -2,6 +2,92 @@ import { uuidv4 } from "../../../utils";
 
 export const COLOR = "#D6E7D5";
 
+export const b1tf0undry = {
+  id: uuidv4(),
+  title: "b1tf0undry",
+  description:
+    "Bitfoundry is a small collection of brilliant and motivated individuals, gathering to develop new ideas and do brain-workouts on the first sunday of each month in a casual hackathon-setting.",
+  links: [
+    {
+      url: "https://github.com/SebastianUdden/b1tf0undry",
+      label: "Github",
+    },
+    {
+      url: "https://app.netlify.com/sites/b1tf0undry/overview",
+      label: "Netlify",
+    },
+    {
+      url: "https://www.b1tf0undry.com",
+      label: "Website",
+    },
+  ],
+  tags: ["apps"],
+  bgColor: COLOR,
+};
+export const bossWintergames = {
+  id: uuidv4(),
+  title: "BOSS Wintergames",
+  description: "boss-wintergames",
+  links: [
+    {
+      url: "https://github.com/SebastianUdden/boss-wintergames",
+      label: "Github",
+    },
+    {
+      url: "https://app.netlify.com/sites/boss-wintergames/overview",
+      label: "Netlify",
+    },
+    {
+      url: "https://boss-wintergames.netlify.app/",
+      label: "Website",
+    },
+  ],
+  tags: ["apps"],
+  bgColor: COLOR,
+};
+export const claraBacklund = {
+  id: uuidv4(),
+  title: "Clara Backlund",
+  description: "clara-backlund",
+  links: [
+    {
+      url: "https://github.com/SebastianUdden/clara-backlund",
+      label: "Github",
+    },
+    {
+      url: "https://app.netlify.com/sites/clara-backlund/overview",
+      label: "Netlify",
+    },
+    {
+      url: "https://clara-backlund.netlify.app/",
+      label: "Website",
+    },
+  ],
+  tags: ["apps", "photography", "portfolio"],
+  bgColor: COLOR,
+};
+export const galacticClock = {
+  id: uuidv4(),
+  title: "Galactic clock",
+  description:
+    "galactic-clock, it's a clock, it's a galaxy. What's not to love?",
+  links: [
+    {
+      url: "https://github.com/SebastianUdden/galactic-clock",
+      label: "Github",
+    },
+    {
+      url: "https://app.netlify.com/sites/galactic-clock/overview",
+      label: "Netlify",
+    },
+    {
+      url: "https://www.galactic-clock.com/",
+      label: "Website",
+    },
+  ],
+  tags: ["apps"],
+  bgColor: COLOR,
+};
 export const hairdo = {
   id: uuidv4(),
   title: "Hairdo",
@@ -17,6 +103,48 @@ export const hairdo = {
     },
     {
       url: "https://hairdo.netlify.app/",
+      label: "Website",
+    },
+  ],
+  tags: ["apps"],
+  bgColor: COLOR,
+};
+export const learnWebDevelopment = {
+  id: uuidv4(),
+  title: "Learn web development",
+  description: "learn-web-development",
+  links: [
+    {
+      url: "https://github.com/SebastianUdden/learn-web-development",
+      label: "Github",
+    },
+    {
+      url: "https://app.netlify.com/sites/learn-web-development/overview",
+      label: "Netlify",
+    },
+    {
+      url: "https://learn-web-development.netlify.app/",
+      label: "Website",
+    },
+  ],
+  tags: ["apps"],
+  bgColor: COLOR,
+};
+export const namnsdag = {
+  id: uuidv4(),
+  title: "Namnsdag",
+  description: "The application namnsdag shows the current nameday in Sweden.",
+  links: [
+    {
+      url: "https://github.com/SebastianUdden/namnsdag",
+      label: "Github",
+    },
+    {
+      url: "https://app.netlify.com/sites/namnsdag/overview",
+      label: "Netlify",
+    },
+    {
+      url: "https://namnsdag.netlify.app/",
       label: "Website",
     },
   ],
@@ -144,6 +272,27 @@ export const simplyChatroom = {
   tags: ["apps", "simply"],
   bgColor: COLOR,
 };
+export const simplyHarmonics = {
+  id: uuidv4(),
+  title: "Simply harmonics",
+  description: "simply-harmonics",
+  links: [
+    {
+      url: "https://github.com/SebastianUdden/simply-harmonics",
+      label: "Github",
+    },
+    {
+      url: "https://app.netlify.com/sites/simply-harmonics/overview",
+      label: "Netlify",
+    },
+    {
+      url: "https://simply-harmonics.netlify.app/",
+      label: "Website",
+    },
+  ],
+  tags: ["apps", "simply"],
+  bgColor: COLOR,
+};
 export const simplySynth = {
   id: uuidv4(),
   title: "Simply synth",
@@ -166,22 +315,4 @@ export const simplySynth = {
   bgColor: COLOR,
 };
 
-// www.b1tf0undry.com
-// social-graph
-// boss-wintergames
-// the-clicker
-// clara-backlund
-// namnsdag
-// www.galactic-clock.com
-// learn-web-development
-// got-timer
-
-// www.b1tf0undry.com
-// social-graph
-// boss-wintergames
-// the-clicker
-// clara-backlund
-// namnsdag
-// www.galactic-clock.com
-// learn-web-development
 // got-timer
