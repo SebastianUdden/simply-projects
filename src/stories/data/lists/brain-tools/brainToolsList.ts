@@ -1,7 +1,10 @@
 import {
   myWebToolsApi,
+  numberMemory,
   simplyFlashCards,
   simplyHabits,
+  simplyMemorizeNumbers,
+  simplyNumberMemory,
   simplyProjects,
   simplyQuotes,
   simplyRememory,
@@ -24,6 +27,8 @@ export const BRAIN_TOOLS_LIST = {
     {
       ...simplyHabits,
     },
+    { ...simplyNumberMemory },
+    { ...simplyMemorizeNumbers },
     { ...simplyProjects },
     {
       ...simplyQuotes,

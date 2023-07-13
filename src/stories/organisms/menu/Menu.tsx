@@ -46,8 +46,6 @@ const Menu = ({
   const [visibleValue, setVisibleValue] = useState(searchQuery);
   const [showWireframe, setShowWireframe] = useState(false);
   const [showThree, setShowThree] = useState(false);
-  const [updateBrand, setUpdateBrand] = useState(false);
-  const [updateEnvironment, setUpdateEnvironment] = useState(false);
 
   const debouncedOnChangeSearchQuery = debounce((value: string) => {
     onChangeFreeTextSearchQuery(value);
@@ -60,7 +58,8 @@ const Menu = ({
   };
 
   useEffect(() => {
-    if (firstLoad.current < 3) {
+    if (firstLoad.current < 3 && visibleValue.length < 2) {
+      console.log(searchQuery);
       setVisibleValue(searchQuery);
       firstLoad.current++;
     }

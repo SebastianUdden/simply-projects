@@ -59,6 +59,50 @@ export const simplyHabits = {
   tags: ["apps", "brain tools", "simply"],
   bgColor: COLOR,
 };
+export const simplyNumberMemory = {
+  id: uuidv4(),
+  title: "Simply number memory",
+  description: "simply-number-memory",
+  brandsUsing: [],
+  links: [
+    {
+      url: "https://github.com/SebastianUdden/simply-number-memory",
+      label: "Github",
+    },
+    {
+      url: "https://app.netlify.com/sites/simply-number-memory/overview",
+      label: "Netlify",
+    },
+    {
+      url: "https://simply-number-memory.netlify.app/",
+      label: "Website",
+    },
+  ],
+  tags: ["apps", "brain tools", "simply"],
+  bgColor: COLOR,
+};
+export const simplyMemorizeNumbers = {
+  id: uuidv4(),
+  title: "Simply memorize numbers",
+  description: "simply-memorize-numbers",
+  brandsUsing: [],
+  links: [
+    {
+      url: "https://github.com/SebastianUdden/simply-memorize-numbers",
+      label: "Github",
+    },
+    {
+      url: "https://app.netlify.com/sites/simply-memorize-numbers/overview",
+      label: "Netlify",
+    },
+    {
+      url: "https://simply-memorize-numbers.netlify.app/",
+      label: "Website",
+    },
+  ],
+  tags: ["apps", "brain tools", "simply"],
+  bgColor: COLOR,
+};
 export const simplyProjects = {
   id: uuidv4(),
   title: "Simply projets",

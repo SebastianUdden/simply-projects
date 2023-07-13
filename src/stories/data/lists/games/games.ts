@@ -2,6 +2,27 @@ import { uuidv4 } from "../../../utils";
 
 export const COLOR = "#26D7D5";
 
+export const alphaPokerBots = {
+  id: uuidv4(),
+  title: "Alpha poker bots",
+  description: "alpha-poker-bots",
+  links: [
+    {
+      url: "https://github.com/SebastianUdden/alpha-poker-bots",
+      label: "Github",
+    },
+    {
+      url: "https://app.netlify.com/sites/alpha-poker-bots/overview",
+      label: "Netlify",
+    },
+    {
+      url: "https://alpha-poker-bots.netlify.app/",
+      label: "Website",
+    },
+  ],
+  tags: ["apps", "games"],
+  bgColor: COLOR,
+};
 export const gotTimer = {
   id: uuidv4(),
   title: "GOT timer",

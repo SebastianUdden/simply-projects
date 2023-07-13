@@ -1,4 +1,5 @@
 import {
+  alphaPokerBots,
   gotTimer,
   itimApi,
   simplyChess,
@@ -14,6 +15,7 @@ export const GAMES_LIST = {
   title: "Games",
   subtitle: "Web application games",
   list: [
+    { ...alphaPokerBots },
     {
       ...gotTimer,
     },
